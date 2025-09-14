@@ -25,3 +25,23 @@ class Solution:
         n = len(nums)
         self.quickSortHelper(nums , 0 , n-1)
         return nums
+
+if __name__ == "__main__":
+    arr = [4, 6, 243,54,324,1,54, 5, 7, 9, 1, 3]
+    n = len(arr)
+
+    print("Before Sorting Array: ")
+    for i in range(n):
+        print(arr[i], end=" ")
+    print()
+
+    # Create an instance of Solution class
+    solution = Solution()
+
+    # Function call to sort the array using quick sort
+    sortedArr = solution.quickSort(arr)
+
+    print("After Sorting Array: ")
+    for i in range(n):
+        print(sortedArr[i], end=" ")
+    print()
