@@ -1,0 +1,22 @@
+class Solution:
+    def generate(self , o_c , c_c , n , string , ans ):
+
+        if o_c == c_c == n :
+            ans .append(string)
+            return
+        
+        if o_c > n :
+            return
+
+        self.generate(o_c + 1 , c_c , n , string+'(', ans )
+
+        if c_c < o_c:
+            self.generate(o_c , c_c + 1 , n , string + ')' , ans )
+
+
+    def generateParenthesis(self, n):
+        ans = [] 
+
+        self.generate( 0 , 0 , n , "" , ans )
+
+        return ans 
