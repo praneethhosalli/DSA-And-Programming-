@@ -1,17 +1,17 @@
-n = int(input("Enter the array size "))
-arr = []
+class Solution:
+    def selectionSort(self, nums):
 
-for _ in range(n):
-    num=int(input("Enter the number: "))
-    arr.append(num)
+        n = len(nums )
 
-for i in range(n-1):
-    mini  = i
-    for j in range(i,n):
-        if arr[j]<arr[mini]:
-            mini = j 
-    arr[i],arr[mini] = arr[mini],arr[i]
-            
-print("Sorted array :",arr)
-        
+        for i in range(0 ,  n ):
+            mini = i 
+
+            for j in range(i,n):
+                if nums[j]<nums[mini]:
+                    mini = j 
+            nums[i] , nums[mini ] = nums[mini ] , nums[i]
+
+        return nums 
+
+
 
