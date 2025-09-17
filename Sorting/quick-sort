@@ -1,47 +1,36 @@
 class Solution:
 
-    def randomIndex(self , arr , low , high ):
-        piviot = arr[low]
-        i = low
-        j = high
+    def piviothelper(self , nums , low , high):
+        piviot = nums[low]
+
+        i = low 
+        j = high 
+
         while(i<j):
-            while(arr[i]<=piviot and i<high):
+            while(nums[i]<= piviot and i<high):
                 i+=1
-            while(arr[j]>piviot and j > low):
+            while(nums[j]>piviot and j > low ):
                 j-=1
-            if i<j:
-                arr[i] , arr[j] = arr[j] ,arr[i]
-        arr[low] , arr[j] = arr[j] , arr[low]
-        return j
+            if i < j :
+                nums[i] , nums[j] = nums[j] , nums[i ]
+        nums[j] , nums[low] = nums[low] , nums[j]
+        return j 
+
+
 
     def quickSortHelper(self , nums , low , high ):
-        if low < high :
-            piviot = self.randomIndex(nums , low , high)
+        if low < high:
+            piviot = self.piviothelper(nums , low , high)
             self.quickSortHelper(nums , low , piviot-1)
-            self.quickSortHelper(nums , piviot+1 , high )
+            self.quickSortHelper(nums , piviot+1 , high)
+
+
 
 
     def quickSort(self, nums):
+
         n = len(nums)
+
         self.quickSortHelper(nums , 0 , n-1)
-        return nums
 
-if __name__ == "__main__":
-    arr = [4, 6, 243,54,324,1,54, 5, 7, 9, 1, 3]
-    n = len(arr)
-
-    print("Before Sorting Array: ")
-    for i in range(n):
-        print(arr[i], end=" ")
-    print()
-
-    # Create an instance of Solution class
-    solution = Solution()
-
-    # Function call to sort the array using quick sort
-    sortedArr = solution.quickSort(arr)
-
-    print("After Sorting Array: ")
-    for i in range(n):
-        print(sortedArr[i], end=" ")
-    print()
+        return nums 
