@@ -11,7 +11,7 @@ class Solution:
                     mini = j 
             nums[i] , nums[mini ] = nums[mini ] , nums[i]
 
-        return nums 
+        return nums         
 
 
 
