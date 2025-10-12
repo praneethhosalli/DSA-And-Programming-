@@ -1,3 +1,5 @@
+//head deletion :
+
 class Solution:
     def deleteHead(self, head):
 
@@ -10,3 +12,25 @@ class Solution:
         prev.next = None 
 
         return head 
+
+// tail deletion :
+
+class Solution:
+    def deleteTail(self, head):
+
+        if head is None or head.next is None :
+            return None 
+
+        last = None 
+        mover = head 
+
+        while (mover.next ) :
+            last = mover 
+            mover = mover.next 
+
+        last.next = None 
+        mover.prev = None 
+
+        return head 
+
+        
