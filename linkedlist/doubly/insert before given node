@@ -1,0 +1,18 @@
+# Definition of doubly linked list:
+# class ListNode:
+#     def __init__(self, val=0, next=None, prev=None):
+#         self.val = val
+#         self.next = next
+#         self.prev = prev
+
+class Solution:
+    def insertBeforeGivenNode(self, node, X):
+
+
+        last = node.prev 
+
+        newnode  = ListNode(X , node , last)
+        node.prev = newnode
+        last.next = newnode 
+
+        return node 
