@@ -1,0 +1,23 @@
+# Definition of doubly linked list:
+# class ListNode:
+#     def __init__(self, val=0, next=None, prev=None):
+#         self.val = val
+#         self.next = next
+#         self.prev = prev
+
+class Solution:
+    def deleteGivenNode(self, node):
+
+        last = node.prev 
+        new = node.next 
+
+        if (new == None ):
+            last .next = None 
+            node.prev = None 
+            return 
+
+        last.next = node.next 
+        new.prev = node.prev 
+
+        node.next = None 
+        node.prev = None 
