@@ -1,0 +1,20 @@
+class Solution:
+    def canJump(self, nums):
+        #your code goes here
+
+        n = len(nums) 
+
+        maxx = 0 
+
+        for i in range(n):
+            if i > maxx : return False 
+            maxx = max(maxx , i +  nums[i])
+            if maxx > n : return True 
+                
+
+        return True 
+
+
+
+
+            
