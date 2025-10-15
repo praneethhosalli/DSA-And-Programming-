@@ -20,4 +20,40 @@ class Solution:
 
 // bf
 
+class Solution:
+    def oddEvenList(self, head):
+
+        if not head or not head.next:
+            return head
+
+
+
+        arr = []
+        temp = head 
+
+        while(temp and temp.next) :
+            arr.append(temp.val)
+            temp = temp.next.next 
+
+        if temp:
+            arr.append(temp.val)
+
+        temp = head.next 
+
+        while(temp and temp.next):
+            arr.append(temp.val)
+            temp = temp.next.next 
+
+        if temp:
+            arr.append(temp.val)
+
+        temp = head 
+        i = 0 
+
+        while(temp):
+            temp.val = arr[i]
+            i +=1
+            temp = temp.next 
+
+        return head 
 
