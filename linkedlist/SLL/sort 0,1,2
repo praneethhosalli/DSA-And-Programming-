@@ -1,0 +1,34 @@
+
+class Solution:
+    def sortList(self, head):
+
+        if not head or not head.next :
+            return head
+
+        zeroHead = ListNode(-1)
+        oneHead = ListNode(-1)
+        twoHead = ListNode(-1)
+
+        zero = zeroHead 
+        one = oneHead 
+        two = twoHead 
+
+        temp = head 
+
+        while(temp):
+            if temp.val == 0 :
+                zero.next = temp 
+                zero = temp    
+            elif temp.val == 1 :
+                one.next = temp 
+                one = temp 
+            elif temp.val == 2 :
+                two.next = temp 
+                two = temp 
+            temp = temp.next 
+
+        zero.next = oneHead.next if oneHead.next else twoHead.next 
+        one.next = twoHead.next 
+        two.next = None 
+
+        return zeroHead.next 
