@@ -32,3 +32,45 @@ class Solution:
         two.next = None 
 
         return zeroHead.next 
+
+
+// bf 
+
+
+class Solution:
+    def sortList(self, head):
+
+        if not head or not head.next :
+            return head
+
+        zerocount = 0 
+        onecount = 0 
+        twocount = 0 
+
+        temp = head 
+
+        while(temp):
+            if temp.val == 0 :
+                zerocount +=1
+            elif temp.val == 1 :
+                onecount +=1 
+            elif temp.val == 2 :
+                twocount+=1
+            temp = temp.next 
+
+        temp = head 
+
+        while(temp):
+            if zerocount >0:
+                temp.val = 0 
+                zerocount-=1
+            elif onecount >0 :
+                temp.val = 1 
+                onecount -=1
+            else:
+                temp.val = 2 
+                twocount -=1
+            temp = temp.next
+
+        return head 
+
