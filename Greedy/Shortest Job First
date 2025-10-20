@@ -1,0 +1,18 @@
+class Solution:
+    def solve(self, bt):
+        #your code goes here
+
+        n = len(bt) 
+
+        total = 0 
+        wait_time = 0 
+        bt.sort()
+
+        for num in bt :
+            
+            wait_time += total
+            total += num 
+
+        ans = wait_time // n
+
+        return ans 
