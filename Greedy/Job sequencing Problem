@@ -1,0 +1,31 @@
+class Solution:
+    def JobScheduling(self, Jobs):
+        #your code goes here
+
+        Jobs.sort(key = lambda  x : -x[2])
+
+        n = len(Jobs )
+
+        maxDeadline = -1
+
+        for i in Jobs :
+            maxDeadline = max(maxDeadline , i[1])
+
+        arr = [-1] * (maxDeadline + 1 )
+
+        count = 0 
+        totalprofit = 0 
+
+        for i in range (n ):
+            for j in range(Jobs[i][1]-1 , -1 , -1 ):
+                if arr[j] == -1 :
+                    count +=1 
+                    totalprofit += Jobs[i][2]
+                    arr[j] = Jobs[i][0]
+                    break 
+
+        return [count , totalprofit]
+
+
+
+        
