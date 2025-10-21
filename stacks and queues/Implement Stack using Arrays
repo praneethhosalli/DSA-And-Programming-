@@ -1,0 +1,39 @@
+class ArrayStack:
+    def __init__(self , size = 1000):
+
+        self.topp = - 1 
+        self.arr = [0] * size 
+        self.capacity = size 
+
+
+
+
+    def push(self, x):
+        if (self.topp) >= self.capacity -1 :
+            print("Stack overflow")
+            return 
+
+        self.topp +=1 
+        self.arr[self.topp]  = x 
+ 
+
+    def pop(self):
+        if self.isEmpty() :
+            print("Stack is empty")
+            return  -1 
+
+        del_ele = self.arr[self.topp]
+        self.topp -=1 
+        return del_ele
+
+    def top(self):
+        if self.isEmpty():
+            print("Stack is empty ")
+            return -1 
+
+        return self.arr[self.topp]
+
+     
+
+    def isEmpty(self):
+        return self.topp == -1  
