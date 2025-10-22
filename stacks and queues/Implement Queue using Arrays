@@ -18,6 +18,7 @@ class ArrayQueue:
         if self.end == -1:
             self.start = 0 
             self.end = 0 
+
         else :
             self.end = (self.end + 1 ) % self.maxsize
 
@@ -29,6 +30,7 @@ class ArrayQueue:
         if self.start == -1:
             print("Queue is Empty")
             exit(1)
+
         popped = self.arr[self.start]
         
         if self.currSize == 1:
