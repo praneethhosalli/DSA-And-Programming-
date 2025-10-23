@@ -1,0 +1,60 @@
+
+
+# stack = []
+
+# stack.append(1)
+# stack.append(2)
+# stack.append(3)
+# stack.append(4)
+
+# stack.pop()
+
+# print(stack)
+
+
+
+# from collections import deque
+
+# stack = deque()
+
+# append
+# appendleft
+# pop
+# popleft
+
+# len(stack)
+# stack[0]
+# stack[-1]
+# clear
+# rotate 
+# extend
+# extendleft
+
+
+
+from collections import deque
+
+stack = deque()
+
+stack.append(1)
+stack.append(2)
+stack.append(3)
+stack.append(4)
+
+print(len(stack))
+
+print(stack)
+
+stack.popleft()
+stack.pop()
+print(len(stack))
+print(stack)
+
+stack.appendleft(1)
+
+print(stack)
+
+
+
+
+print(stack[-1])
