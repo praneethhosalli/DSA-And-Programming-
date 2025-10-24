@@ -51,8 +51,4 @@ print(stack)
 stack.appendleft(1)
 
 print(stack)
-
-
-
-
 print(stack[-1])
