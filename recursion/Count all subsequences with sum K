@@ -1,0 +1,13 @@
+class Solution:
+
+    def function(self , ind , n , arr , summ ):
+        if summ == 0 :
+            return 1
+        if summ < 0 or ind == n   :
+            return 0 
+
+        return self.function(ind + 1 , n , arr , summ - arr[ind]) + self.function(ind + 1 , n , arr , summ )
+
+    def countSubsequenceWithTargetSum(self, nums, k):
+        n = len(nums)
+        return self.function(0,n,nums,k)
