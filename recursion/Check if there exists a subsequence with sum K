@@ -1,0 +1,13 @@
+class Solution:
+
+    def function(self , ind , n , arr , summ ):
+        if summ == 0 :
+            return True 
+        if summ < 0 or ind == n   :
+            return False 
+
+        return self.function(ind + 1 , n , arr , summ - arr[ind]) or self.function(ind + 1 , n , arr , summ )
+
+    def checkSubsequenceSum(self, nums, k):
+        n = len(nums)
+        return self.function(0,n,nums,k)
