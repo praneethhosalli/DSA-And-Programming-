@@ -1,0 +1,35 @@
+from queue import Queue 
+
+class QueueStack:
+    def __init__(self):
+
+      self.que = Queue()
+
+
+
+    def push(self, x):
+
+      size = self.que.qsize()
+
+      self.que.put(x)
+
+      for _ in range ( size):
+        self.que.put(self.que.get())
+ 
+
+    def pop(self):
+      ans = self.que.queue[0]
+
+      self.que.get()
+
+      return ans 
+
+
+    def top(self):
+      return self.que.queue[0] 
+     
+
+    def isEmpty(self):
+
+      return self.que.empty()
+
