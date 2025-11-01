@@ -1,1 +1,51 @@
+class Solution:
 
+    def maximim(self,arr):
+        ans = float('-inf')
+
+        for i in range(len(arr)):
+            if arr[i] > ans :
+                ans = arr[i]
+
+        return ans 
+
+    def calculateTotalHours(self , arr , hours ):
+        totalH = 0 
+
+        for i in range (len(arr)):
+            totalH += math.ceil(arr[i]/hours)
+
+        return totalH  
+
+
+    def minimumRateToEatBananas(self, nums, h):
+
+        maxi =  self.maximim(nums)
+
+        low = 1 
+        high = maxi 
+
+        while (low<=high ):
+            mid = (low + high ) // 2
+
+            hours_took = self.calculateTotalHours(nums , mid ) 
+
+            if hours_took <= h :
+                high = mid - 1 
+            else :
+                low = mid + 1 
+
+        return low
+
+                
+
+        
+        
+
+
+
+       
+
+
+
+       
