@@ -34,5 +34,14 @@ class Solution:
       return low 
 
 
+      # linear approch 
+      # for i in range ( 1 , maxi + 1 ):
+      #   total = self.actual(nums , i )
+      #   if total<=limit:
+      #     return i 
+
+      # return -1 
+
+
 
        
