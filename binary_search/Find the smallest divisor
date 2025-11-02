@@ -1,1 +1,38 @@
 
+class Solution:
+    def findmax(self , arr):
+      ans = float('-inf')
+
+      for num in arr :
+        if num > ans :
+          ans = num 
+      
+      return ans 
+
+    def actual(self , arr , d ):
+      total = 0 
+
+      for i in range ( len(arr)):
+        total += math.ceil(arr[i] / d)
+
+      return total  
+
+    def smallestDivisor(self, nums, limit):
+      maxi = self.findmax(nums)
+
+      low , high = 1 , maxi 
+
+      while(low<=high):
+        mid = (low + high ) // 2 
+        total = self.actual(nums , mid )
+
+        if total <= limit:
+          high = mid -1 
+        else :
+          low = mid + 1 
+
+      return low 
+
+
+
+       
