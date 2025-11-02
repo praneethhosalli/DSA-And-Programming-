@@ -1,0 +1,29 @@
+class Solution:
+
+    def possible(self , arr , day , k , m ):
+
+        count = 0 
+        totalB = 0 
+
+        for i in range(len(arr)):
+            if arr[i] <= day :
+                count +=1 
+            else :
+                totalB += (count // k )
+                count = 0 
+
+        totalB += (count // k )
+
+        return totalB >= m
+
+    def roseGarden(self, n, nums, k, m):
+
+        if m * k > n :
+            return -1 
+
+        mini = min(nums)
+        maxi = max(nums)
+
+        for i in range(mini , maxi + 1 ):
+            if self.possible(nums , i , k , m ):
+                return i 
