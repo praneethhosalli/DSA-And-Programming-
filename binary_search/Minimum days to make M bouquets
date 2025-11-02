@@ -24,6 +24,20 @@ class Solution:
         mini = min(nums)
         maxi = max(nums)
 
-        for i in range(mini , maxi + 1 ):
-            if self.possible(nums , i , k , m ):
-                return i 
+        while(mini <= maxi ):
+            mid = (mini + maxi ) // 2 
+
+            if self.possible(nums , mid , k , m ):
+                maxi = mid -1 
+            else :
+                mini = mid + 1 
+
+        return  mini 
+
+
+        # for i in range(mini , maxi + 1 ):
+        #     if self.possible(nums , i , k , m ):
+        #         return i 
+
+        
+     
