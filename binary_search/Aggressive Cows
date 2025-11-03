@@ -14,18 +14,25 @@ class Solution:
             
         return False 
 
+
     def aggressiveCows(self, nums, k):
 
         nums.sort()
 
         limit = nums[-1] - nums[0]
 
-        for i in range( 1 , limit + 1 ):
+        left = 1 
+        right = limit 
 
-            if not self.canWePlace(nums , i , k ):
-                return i-1 
+        while(left<=right):
+            mid = (left + right  ) // 2 
+            if not self.canWePlace(nums , mid , k ):
+                right = mid -1 
+            else :
+                left = mid + 1
 
-        return limit
+
+        return left -1 
 
             
         
