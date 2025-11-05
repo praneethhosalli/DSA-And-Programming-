@@ -1,0 +1,31 @@
+class Solution:
+
+    def countStudents (self , nums ,pages ):
+        student = 1 
+        pagesStudent = 0 
+
+        for i in range(len(nums )):
+            if nums[i] + pagesStudent <= pages :
+                pagesStudent += nums[i]
+            else :
+                pagesStudent = nums[i]
+                student +=1 
+
+        return student 
+
+
+    def findPages(self, nums, m):
+
+        if m > len(nums):
+            return -1 
+
+        low = max(nums )
+
+        high = sum(nums)
+
+
+
+        for i in range (low , high + 1):
+
+            if self.countStudents(nums  , i ) <= m :
+                return i 
