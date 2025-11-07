@@ -1,31 +1,25 @@
 class Solution:
+    def searchMatrix(self, mat, target):
 
-    def bs(self,nums,target):
+        n = len(mat)
+        m = len(mat[0])
+
         low = 0 
-        high = len(nums) -1
+        high = m*n -1 
 
         while(low<=high):
             mid = (low + high) // 2 
 
-            if nums[mid] == target:
+            row = mid // m 
+            col = mid %  m 
+
+            if mat[row][col] == target:
                 return True
-            elif nums[mid] > target:
+            elif mat[row][col] > target:
                 high = mid - 1
             else :
                 low = mid + 1 
 
         return False
 
-
-
-    def searchMatrix(self, mat, target):
-
-        m = len(mat[0])
-
-        for i in range (len(mat)):
-
-            if mat[i][0] <= target <= mat[i][m-1]:
-
-                return self.bs(mat[i] , target)
-                
-        return False 
+       
