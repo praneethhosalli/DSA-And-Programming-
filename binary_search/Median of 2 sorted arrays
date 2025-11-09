@@ -26,13 +26,16 @@ class Solution:
             newarr.append(arr2[j])
             j+=1
 
-        n = n1 + n2
+
+        n = (n1 + n2)
+
         if n % 2 == 1 :
             return float(newarr[n//2])
 
-        median = (float(newarr[n//2]) + float(newarr[(n//2)-1])) / 2.0
+        median =( float(newarr[n//2]) + float(newarr[(n//2)-1])) / 2.0
 
         return median
 
+        
 
         
