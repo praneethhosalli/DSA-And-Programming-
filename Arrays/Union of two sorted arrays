@@ -1,0 +1,18 @@
+class Solution:
+    def unionArray(self, nums1, nums2):
+        s = set()
+
+        union= []
+
+        for num in nums1 :
+            s.add(num)
+
+        for num in nums2:
+            s.add(num)
+
+        s = sorted(s)
+
+        for num in s :
+            union.append(num)
+
+        return union
