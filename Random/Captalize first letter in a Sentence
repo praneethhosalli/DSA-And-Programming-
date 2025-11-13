@@ -1,1 +1,16 @@
 
+sentence = "Praneeth bdsddfd ifidf hafbdhf fdfhbd fdfh iuaf iuhdiud iaufha asoidaj adjpasd pODJAB FIUFHSI AUHSDOASD UHDKSJB IUIB sdfb ifbs"
+
+words = sentence.split(" ")
+res =[]
+
+# print(words)
+
+for i in words :
+    cap = i[0].upper() + i[1:]
+    res.append(cap)
+    
+print(" ".join(res))
+    
+
+# print(words)
