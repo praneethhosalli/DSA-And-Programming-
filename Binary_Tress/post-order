@@ -1,0 +1,25 @@
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, val=0, left=None, right=None):
+#         self.data = val
+#         self.left = left
+#         self.right = right
+
+class Solution:
+
+    def recursiveInorder(self , root , arr):
+        if root is None :
+            return 
+        self.recursiveInorder(root.left , arr)
+        self.recursiveInorder(root.right , arr)
+        arr.append(root.data)
+
+
+    def postorder(self, root):
+        #your code goes here
+
+        arr = []
+
+        self.recursiveInorder(root , arr)
+
+        return arr
