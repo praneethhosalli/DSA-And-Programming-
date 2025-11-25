@@ -21,3 +21,27 @@ class Solution:
         self.recursiveInorder(root , arr)
 
         return arr
+
+# iterative 
+    def inorder(self, root):
+        #your code goes here
+
+        st = []
+
+        arr = []
+
+        node = root 
+
+        while True :
+            if node is not None :
+                st.append(node)
+                node = node.left 
+
+            else:
+                if not st  : # if st is None 
+                    break 
+                node = st.pop()
+                arr.append(node.data)
+                node = node.right 
+
+        return arr 
