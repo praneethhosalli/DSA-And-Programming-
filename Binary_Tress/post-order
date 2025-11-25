@@ -23,3 +23,27 @@ class Solution:
         self.recursiveInorder(root , arr)
 
         return arr
+
+# iterative 
+
+    def postorder(self, root):
+        #your code goes here
+
+        arr = []
+
+        node = root 
+
+        st = []
+
+        while True :
+            if node :
+                st.append(node)  # 1  , 3 ,7 ,10 
+                arr.append(node.data)
+                node = node.right 
+            else :
+                if not st : 
+                    break 
+                node = st.pop()
+                node = node.left 
+
+        return arr[::-1] 
