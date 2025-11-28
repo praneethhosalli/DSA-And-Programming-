@@ -25,18 +25,13 @@ class Solution:
 # iterative 
     def inorder(self, root):
         #your code goes here
-
         st = []
-
         arr = []
-
         node = root 
-
         while True :
             if node is not None :
                 st.append(node)
                 node = node.left 
-
             else:
                 if not st  : # if st is None 
                     break 
